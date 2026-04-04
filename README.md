@@ -23,7 +23,7 @@ An intelligent document processing API that accepts PDF, DOCX, and image files a
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/docuai-backend.git
+git clone https://github.com/eisaabdullah985-wq/docuai-backend.git
 cd docuai-backend
 ```
 
@@ -33,23 +33,7 @@ cd docuai-backend
 npm install
 ```
 
-### 3. Set environment variables
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and fill in:
-
-```env
-PORT=5000
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-API_KEY=sk_track2_987654321
-AI_MODEL=claude-opus-4-5
-TESSERACT_LANG=eng
-```
-
-### 4. Run the application
+### 3. Run the application
 
 ```bash
 # Development (with hot reload)
@@ -76,8 +60,6 @@ POST /api/document-analyze
 All requests must include a valid API key in the header:
 
 ```
-x-api-key: YOUR_API_KEY
-```
 
 Requests without a valid key receive `401 Unauthorized`.
 
@@ -96,18 +78,6 @@ Requests without a valid key receive `401 Unauthorized`.
 | `fileName` | ✅ | Original file name |
 | `fileType` | ✅ | `pdf`, `docx`, or `image` |
 | `fileBase64` | ✅ | Base64-encoded file content |
-
-### cURL Example
-
-```bash
-# Encode your file
-BASE64=$(base64 -w 0 sample.pdf)
-
-curl -X POST https://your-domain.com/api/document-analyze \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: sk_track2_987654321" \
-  -d "{\"fileName\": \"sample.pdf\", \"fileType\": \"pdf\", \"fileBase64\": \"$BASE64\"}"
-```
 
 ### Success Response
 
