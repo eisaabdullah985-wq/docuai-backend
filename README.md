@@ -138,22 +138,17 @@ The system follows a modular API-first architecture:
 
 ## AI Tools Used
 
-The following AI tools were used during development and implementation:
+This project used the following AI-assisted tools during development:
 
-- **Anthropic Claude API**  
-  Used in the application itself for:
-  - document summarization
+- **Google Gemini API** — Used at runtime for:
+  - document summarisation
   - entity extraction
-  - sentiment analysis
+  - sentiment classification
 
-- **ChatGPT**  
-  Used as a development assistant for:
+- **ChatGPT** — Used during development for:
   - architecture planning
-  - OCR improvement strategy
-  - prompt engineering refinement
-  - code review and debugging support
-
-No hardcoded outputs, pre-mapped answers, or test-case-specific logic were used. All document analysis results are generated dynamically from extracted file content.
+  - debugging support
+  - prompt refinement
 
 ## Known Limitations
 

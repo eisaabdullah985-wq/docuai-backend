@@ -1,8 +1,10 @@
-const Anthropic = require('@anthropic-ai/sdk');
+const { GoogleGenAI } = require('@google/genai');
 const logger = require('../utils/logger');
 const { AI_TEXT_CHAR_LIMIT, DEFAULT_MODEL } = require('../config/constants');
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
 
 function truncate(text) {
   if (text.length <= AI_TEXT_CHAR_LIMIT) return text;
@@ -105,13 +107,12 @@ Return valid JSON only.
 `;
 
   try {
-    const message = await client.messages.create({
+    const response = await client.models.generateContent({
       model,
-      max_tokens: 2048,
-      messages: [{ role: 'user', content: prompt }],
+      contents: prompt,
     });
 
-    const raw = message.content[0]?.text?.trim() ?? '{}';
+    const raw = response.text?.trim() ?? '{}';
 
     const cleaned = raw
       .replace(/^```json\s*/i, '')
