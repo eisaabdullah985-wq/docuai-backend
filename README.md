@@ -6,6 +6,14 @@ An intelligent document processing API that accepts PDF, DOCX, and image files a
 
 ---
 
+## 🌐 Live Links
+
+- **Frontend Demo:** [https://docuanalysis-ai.netlify.app/](https://docuanalysis-ai.netlify.app/)
+- **Backend API Base URL:** [https://docuai-backend-production-e7e1.up.railway.app/](https://docuai-backend-production-e7e1.up.railway.app/)
+- **Analyze Endpoint:** [https://docuai-backend-production-e7e1.up.railway.app/api/document-analyze](https://docuai-backend-production-e7e1.up.railway.app/api/document-analyze)
+
+---
+
 ## Tech Stack
 
 - **Language / Framework**: Node.js + Express.js

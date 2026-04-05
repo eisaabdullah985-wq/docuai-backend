@@ -22,16 +22,19 @@ app.use('/api/document-analyze', rateLimiter);
 // ── Routes 
 app.use('/api', analyzeRoutes);
 
-app.get('/', (_req, res) => {
-  res.json({
+app.get('/', (req, res) => {
+  res.status(200).json({
     name: 'DocuAI - Document Analysis API',
     status: 'live',
+    frontend: 'https://docuanalysis-ai.netlify.app/',
+    documentation: 'https://github.com/eisaabdullah985-wq/docuai-backend',
     endpoints: {
       health: '/health',
-      analyze: '/api/document-analyze',
+      analyze: '/api/document-analyze'
     },
     authentication: 'Use x-api-key header',
     supportedFileTypes: ['pdf', 'docx', 'image'],
+    note: 'Public frontend available at the frontend URL above'
   });
 });
 // ── Health check
